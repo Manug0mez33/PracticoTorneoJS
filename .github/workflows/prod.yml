@@ -1,4 +1,4 @@
-name: CD - Deploy con Git Pull
+name: CD - Deploy Production
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Deploy to Server
+    name: Deploy to Production
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +21,6 @@ jobs:
 
       - name: Run Deploy Script
         run: |
-         ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}        " cd ~/lemp-sites/manuel_gomez/PracticoTorneoJS &&
+         ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}        " cd ~/lemp-sites/manuel_gomez/prod &&
             git pull origin main
           "
