@@ -21,6 +21,7 @@ jobs:
 
       - name: Run Deploy Script
         run: |
-         ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }}        " cd ~/lemp-sites/manuel_gomez/prod &&
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_IP }} "
+            cd ~/lemp-sites/manuel_gomez/prod &&
             git pull origin main
           "
